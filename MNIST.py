@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[19]:
-
-
 import torch
 import torch.nn as nn
 import torch.utils.data as Data
@@ -154,10 +148,3 @@ for step, (batch_x, batch_y) in enumerate(train_loader):
     s = cv2.imread('2.jpg')
     cv2.imshow('img2',s)
     cv2.waitKey(0)
-
-
-# In[ ]:
-
-
-
-
