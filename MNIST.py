@@ -8,8 +8,6 @@ import cv2
 
 
 
-
-
 torch.manual_seed(1)#每次随机初始化相同
 
 EPOCH = 15
