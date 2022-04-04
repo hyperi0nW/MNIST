@@ -14,10 +14,6 @@ LR = 0.001
 DOWNLOAD_MNIST = True
 device = ('cuda')
 
-
-# In[42]:
-
-
 train_data = torchvision.datasets.MNIST(
     root = './data/',
     train = True,
@@ -34,33 +30,17 @@ test_data = torchvision.datasets.MNIST(
     download = DOWNLOAD_MNIST
 )
 
-
-# In[43]:
-
-
 train_loader = Data.DataLoader(
     dataset = train_data,
     batch_size = BATCH_SIZE,
     shuffle = True
 )
 
-
-# In[44]:
-
-
 print(test_data[0][0].shape,test_data[0][1])
-
-
-# In[45]:
-
 
 test_x = torch.unsqueeze(test_data.test_data, dim=1)[:200]
 test_y = test_data.test_labels[:200]
 print(test_x.shape, test_y.shape)
-
-
-# In[46]:
-
 
 class LeNet_NumRec(nn.Module):
     def __init__(self):
@@ -86,22 +66,10 @@ class LeNet_NumRec(nn.Module):
 
 net = LeNet_NumRec()
 
-
-# In[47]:
-
-
 print(net)
-
-
-# In[48]:
-
 
 optimizer = torch.optim.Adam(net.parameters(), lr=LR)
 loss_fun = nn.CrossEntropyLoss()
-
-
-# In[49]:
-
 
 net = net.to(device)
 print("training on ", device)
